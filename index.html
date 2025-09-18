@@ -3,1295 +3,762 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructional Designer Portfolio</title>
+    <title>N T Giridharan - Instructional Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* CSS Reset and Variables */
-        :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --secondary: #10b981;
-            --accent: #8b5cf6;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --light-gray: #e2e8f0;
-            --transition: all 0.3s ease;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --box-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        
+        .skill-badge {
+            transition: all 0.3s ease;
         }
-
-        h1 {
-            font-size: 3.5rem;
-            color: var(--dark);
+        
+        .skill-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
+        
+        .portfolio-card {
+            transition: all 0.3s ease;
         }
-
-        h3 {
-            font-size: 1.8rem;
-            color: var(--dark);
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-
-        h4 {
-            font-size: 1.3rem;
-            color: var(--primary);
+        
+        .project-tool {
+            transition: all 0.2s ease;
         }
-
-        p {
-            margin-bottom: 1.2rem;
-            color: var(--gray);
+        
+        .project-tool:hover {
+            transform: scale(1.05);
         }
-
-        .text-primary {
-            color: var(--primary) !important;
-        }
-
-        .text-secondary {
-            color: var(--secondary) !important;
-        }
-
-        /* Layout */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 100px 0;
+        
+        .nav-link {
             position: relative;
         }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            display: inline-block;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
+        
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
-            transition: var(--transition);
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
         }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        
+        .nav-link.active::after,
+        .nav-link:hover::after {
             width: 100%;
         }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark);
-        }
-
-        /* Hero Section */
-        #home {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
-            position: relative;
+        
+        .mobile-menu {
+            max-height: 0;
             overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
-
-        .hero-content {
-            max-width: 600px;
-            z-index: 2;
+        
+        .mobile-menu.open {
+            max-height: 500px;
         }
-
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .hero-text {
-            margin-bottom: 2rem;
-        }
-
-        .hero-text h1 {
-            margin-bottom: 1.5rem;
-            font-size: 3.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-text h1 span {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(90deg, #1e40af, #4f46e5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: var(--box-shadow);
-            margin-right: 1rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--box-shadow-hover);
-            background: var(--primary-dark);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .hero-image {
-            position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 35%;
-            max-width: 500px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            border: 4px solid white;
-        }
-
-        /* About Section */
-        #about {
-            background-color: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow-hover);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Skills Section */
-        #skills {
-            background-color: #f1f5f9;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            padding: 0.8rem 1.2rem;
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .skill-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            background: var(--primary);
-            color: white;
-        }
-
-        .skill-item:hover svg {
-            fill: white;
-        }
-
-        .skill-icon {
-            margin-right: 0.8rem;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .tools-list {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .tools-list h4 {
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .tool-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .tool-tag {
-            background: var(--light-gray);
-            color: var(--dark);
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Portfolio Section */
-        #portfolio {
-            background-color: white;
-        }
-
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .filter-btn {
-            padding: 0.8rem 1.5rem;
-            background: var(--light-gray);
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-
-        .portfolio-image {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(59, 130, 246, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay-content {
-            text-align: center;
-            color: white;
-            padding: 2rem;
-        }
-
-        .portfolio-overlay-content h4 {
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-content {
-            padding: 1.5rem;
-        }
-
-        .portfolio-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .portfolio-tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .portfolio-tool {
-            background: var(--light-gray);
-            color: var(--dark);
-            padding: 0.25rem 0.5rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-            z-index: 0;
-        }
-
-        #contact .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        #contact h2 {
-            color: white;
-        }
-
-        #contact p {
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            margin-top: 3rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            transition: var(--transition);
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .form-control:focus {
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: white;
-            color: var(--primary);
-            font-weight: 600;
-            padding: 12px 30px;
-            font-size: 1rem;
-            border-radius: 30px;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            display: block;
-            margin: 0 auto;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--box-shadow-hover);
-            background: var(--light);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            list-style: none;
-            margin-top: 1rem;
-            gap: 1rem;
-        }
-
-        .social-links li a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .social-links li a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        /* Animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger-animation {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero-image {
-                position: relative;
-                width: 80%;
-                margin: 3rem auto 0;
-                right: auto;
-                top: auto;
-                transform: none;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-image {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: white;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 1rem 0;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 1rem 0;
-                text-align: center;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .btn {
-                display: block;
-                width: 100%;
-                margin-bottom: 1rem;
-                margin-right: 0;
-            }
-
-            .btn-outline {
-                margin-left: 0;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .container {
-                width: 95%;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-        }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">DesignPro</a>
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="menu-toggle">☰</div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Home Section -->
-    <section id="home">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <div class="hero-text">
-                    <h1>Hi, I'm <span>Jane Doe</span></h1>
-                    <p>I'm an Instructional Designer passionate about creating engaging learning experiences that empower professionals to grow and succeed in their careers.</p>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-800">N T Giridharan</h1>
+                    <p class="text-sm text-gray-600">Instructional Designer + eLearning Developer</p>
                 </div>
-                <div>
-                    <a href="#portfolio" class="btn">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <button data-page="home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200">
+                            Home
+                        </button>
+                        <button data-page="portfolio" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200">
+                            Portfolio
+                        </button>
+                        <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <svg id="menu-open-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="menu-close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <img src="https://placehold.co/500x600/3b82f6/ffffff?text=Instructional+Designer" alt="Instructional Designer" class="hero-image fade-in">
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>About Me</h2>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <button data-page="home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">
+                    Home
+                </button>
+                <button data-page="portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left">
+                    Portfolio
+                </button>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700 w-full text-center">
+                    Contact
+                </a>
             </div>
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <h3>Creating Impactful Learning Experiences</h3>
-                    <p>With over 8 years of experience in instructional design, I specialize in developing innovative e-learning solutions that bridge the gap between knowledge and performance. My approach combines adult learning theory with cutting-edge technology to create engaging, effective training programs.</p>
-                    <p>I hold a Master's degree in Instructional Design and Technology and am certified in Articulate Storyline and Adobe Creative Suite. My work has helped organizations across healthcare, technology, and education sectors improve employee performance and achieve their business goals.</p>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-16">
+        <!-- Home Page -->
+        <div id="home-page" class="bg-white">
+            <!-- Hero Section -->
+            <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-8 md:py-16">
+                <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <!-- Left Column: Text and Buttons -->
+                        <div class="space-y-6 fade-in">
+                            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                                Crafting
+                                <span class="block hero-text">Transformative Learning</span>
+                                Experiences
+                            </h1>
+                            <p class="text-xl md:text-2xl text-gray-600 max-w-lg">
+                                I design scenario-driven and gamified learning solutions that turn ideas into action.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button id="view-work-btn" class="px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-200 shadow-lg">
+                                    View My Work
+                                </button>
+                                <a href="#contact" class="px-8 py-4 border-2 border-gray-300 text-gray-700 text-lg font-semibold rounded-lg hover:border-blue-600 hover:text-blue-600 transform hover:-translate-y-1 transition-all duration-200">
+                                    Get in Touch
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Placeholder Portrait Image -->
+                        <div class="flex justify-center fade-in">
+                            <img 
+                                src="https://placehold.co/600x700/3b82f6/ffffff?text=N+T+Giridharan" 
+                                alt="N T Giridharan - Instructional Designer" 
+                                class="rounded-2xl shadow-xl max-w-full h-auto object-cover border-4 border-white"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Project Section -->
+            <section class="py-16 bg-white border-b border-gray-100">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Project</h2>
+                        <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                            A highlight of my portfolio — designed to engage learners and deliver measurable outcomes.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <!-- Project Image -->
+                        <div class="relative fade-in">
+                            <img 
+                                src="https://placehold.co/600x400/3b82f6/ffffff?text=Operating+Room+Etiquette" 
+                                alt="Operating Room Etiquette and Safety" 
+                                class="rounded-2xl shadow-xl w-full h-auto object-cover"
+                            >
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="space-y-6 fade-in">
+                            <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Operating Room Etiquette and Safety</h3>
+                            <p class="text-lg text-gray-700 leading-relaxed">R&D engineers at a medical device company are required to conduct live observations in operating rooms. These visits will help the engineers identify real-world problems that surgeons face in their daily work. However, surgical teams operate under strict protocol and many other regulations. How can the team learn some of these rules and gain access to the OR? This E-learning course provides a scenario-based simulation for researchers to identify and avoid unsafe practices in an OR.</p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Articulate Storyline</span>
+                                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Adobe Premiere Pro</span>
+                                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Adobe After Effects</span>
+                                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Adobe Photoshop</span>
+                                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">ChatGPT</span>
+                            </div>
+
+                            <div class="flex items-center mt-6">
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                                    2023
+                                </span>
+                            </div>
+
+                            <button id="view-full-project-btn" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                                View Full Project
+                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="py-12 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            I approach business objectives with creativity and user research to design impactful learning experiences. By integrating adult learning theory with modern multimedia techniques, I create content that is engaging, accessible, and results-driven.
+                        </p>
+                    </div>
                     
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <p>Projects Completed</p>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="fade-in">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Skills</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Instructional Design</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Adult Learning Theory</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">LMS Implementation</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Storyboarding</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">E-Learning Development</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Needs Analysis</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">2D Animation</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Graphic Design</span>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">8+</span>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">95%</span>
-                            <p>Average Completion Rate</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">30+</span>
-                            <p>Satisfied Clients</p>
+                        
+                        <div class="fade-in">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Tools</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Articulate Storyline</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Adobe After Effects</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Adobe Photoshop</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Adobe Illustrator</span>
+                                <span class="skill-badge px-5 py-3 bg-white text-blue-700 rounded-full text-sm font-medium shadow-sm border border-blue-100">Adobe Premiere Pro</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image fade-in">
-                    <img src="https://placehold.co/500x400/10b981/ffffff?text=Professional+Photo" alt="Professional Photo">
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>My Expertise</h2>
-            </div>
-            <div class="skills-container">
-                <div class="skills-list fade-in">
-                    <div class="skill-item">
-                        <span class="skill-icon">🎯</span>
-                        <span>Instructional Design</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🎓</span>
-                        <span>Adult Learning Theory</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">💻</span>
-                        <span>LMS Implementation</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">📝</span>
-                        <span>Storyboarding</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">📱</span>
-                        <span>E-Learning Development</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🔍</span>
-                        <span>Needs Analysis</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🎬</span>
-                        <span>2D Animation</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🎨</span>
-                        <span>Graphic Design</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">📊</span>
-                        <span>Training Evaluation</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🎥</span>
-                        <span>Video Editing</span>
-                    </div>
+            <!-- Call to Action -->
+            <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+                <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Learning Programs?</h2>
+                    <p class="text-xl mb-8 opacity-90">
+                        Let's collaborate to create scenario-driven and gamified eLearning solutions that empower learners with actionable takeaways.
+                    </p>
+                    <a href="#contact" class="inline-block px-8 py-4 bg-white text-blue-600 text-lg font-semibold rounded-lg hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-200 shadow-lg">
+                        Start a Conversation
+                    </a>
                 </div>
-                
-                <div class="tools-list fade-in">
-                    <h4>Tools & Technologies</h4>
-                    <div class="tool-tags">
-                        <span class="tool-tag">Articulate Storyline</span>
-                        <span class="tool-tag">Adobe After Effects</span>
-                        <span class="tool-tag">Adobe Photoshop</span>
-                        <span class="tool-tag">Adobe Illustrator</span>
-                        <span class="tool-tag">Adobe Premiere Pro</span>
-                        <span class="tool-tag">Camtasia</span>
-                        <span class="tool-tag">Canva</span>
-                        <span class="tool-tag">Figma</span>
-                        <span class="tool-tag">Miro</span>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>My Portfolio</h2>
-            </div>
-            
-            <div class="portfolio-filters fade-in">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-                <button class="filter-btn" data-filter="corporate">Corporate</button>
-                <button class="filter-btn" data-filter="education">Education</button>
-            </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item fade-in" data-category="healthcare">
-                    <div class="portfolio-image">
-                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Operating+Room+Etiquette" alt="Operating Room Etiquette">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-overlay-content">
-                                <h4>Operating Room Etiquette and Safety</h4>
-                                <p>Interactive E-Learning Course</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-meta">
-                            <span>2023</span>
-                            <span>Healthcare</span>
-                        </div>
-                        <h3>Operating Room Etiquette and Safety</h3>
-                        <p>R&D engineers at a medical device company are required to conduct live observations in operating rooms. These visits will help the engineers identify real-world problems that surgeons face in their daily work. However, surgical teams operate under strict protocol and many other regulations. How can the team learn some of these rules and gain access to the OR? This E-learning course provides a scenario-based simulation for researchers to identify and avoid unsafe practices in an OR.</p>
-                        <div class="portfolio-tools">
-                            <span class="portfolio-tool">Articulate Storyline</span>
-                            <span class="portfolio-tool">Adobe Captivate</span>
-                            <span class="portfolio-tool">LMS Integration</span>
-                        </div>
-                    </div>
+        <!-- Portfolio Page -->
+        <div id="portfolio-page" class="bg-white hidden">
+            <!-- Header -->
+            <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        My Portfolio
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        A showcase of my most impactful instructional design projects across various industries and learning environments.
+                    </p>
+                    <button id="back-to-home-btn" class="mt-8 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors duration-200">
+                        ← Back to Home
+                    </button>
                 </div>
-                
-                <div class="portfolio-item fade-in" data-category="corporate">
-                    <div class="portfolio-image">
-                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Leadership+Development" alt="Leadership Development">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-overlay-content">
-                                <h4>Leadership Development Course</h4>
-                                <p>Interactive Training Program</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-meta">
-                            <span>2023</span>
-                            <span>Corporate</span>
-                        </div>
-                        <h3>Leadership Development Course</h3>
-                        <p>Created an interactive leadership program featuring scenario-based learning and peer collaboration modules. The course includes realistic workplace scenarios, decision-making exercises, and feedback mechanisms to develop essential leadership skills.</p>
-                        <div class="portfolio-tools">
-                            <span class="portfolio-tool">Miro</span>
-                            <span class="portfolio-tool">Camtasia</span>
-                            <span class="portfolio-tool">Zoom</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item fade-in" data-category="corporate">
-                    <div class="portfolio-image">
-                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Compliance+Training" alt="Compliance Training">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-overlay-content">
-                                <h4>Compliance Training Suite</h4>
-                                <p>Engaging Compliance Modules</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-meta">
-                            <span>2022</span>
-                            <span>Corporate</span>
-                        </div>
-                        <h3>Compliance Training Suite</h3>
-                        <p>Developed a series of engaging compliance modules that increased completion rates from 65% to 92%. The training uses gamification elements, interactive quizzes, and real-world scenarios to make compliance training more engaging and effective.</p>
-                        <div class="portfolio-tools">
-                            <span class="portfolio-tool">Canva</span>
-                            <span class="portfolio-tool">QuizMaker</span>
-                            <span class="portfolio-tool">SCORM</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item fade-in" data-category="education">
-                    <div class="portfolio-image">
-                        <img src="https://placehold.co/600x400/f59e0b/ffffff?text=Remote+Learning" alt="Remote Learning">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-overlay-content">
-                                <h4>Remote Learning Platform</h4>
-                                <p>LMS Interface Redesign</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-meta">
-                            <span>2022</span>
-                            <span>Education</span>
-                        </div>
-                        <h3>Remote Learning Platform</h3>
-                        <p>Redesigned an outdated LMS interface to improve user engagement and accessibility for remote learners. The new design focuses on intuitive navigation, clear information hierarchy, and mobile responsiveness to enhance the learning experience.</p>
-                        <div class="portfolio-tools">
-                            <span class="portfolio-tool">Figma</span>
-                            <span class="portfolio-tool">User Testing</span>
-                            <span class="portfolio-tool">Accessibility Audit</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Get In Touch</h2>
-            </div>
-            <p class="fade-in">I'm always interested in new opportunities and collaborative projects. Let's discuss how we can work together to create impactful learning experiences.</p>
-            
-            <form class="contact-form fade-in" id="contactForm">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
+            <!-- Portfolio Grid -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div class="portfolio-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="relative overflow-hidden">
+                                <img
+                                    src="https://placehold.co/600x400/3b82f6/ffffff?text=Operating+Room+Etiquette"
+                                    alt="Operating Room Etiquette and Safety"
+                                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                                >
+                                <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    2023
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Operating Room Etiquette and Safety</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">R&D engineers at a medical device company are required to conduct live observations in operating rooms. These visits will help the engineers identify real-world problems that surgeons face in their daily work.</p>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Tools & Technologies:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Articulate Storyline</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Adobe Premiere Pro</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Adobe After Effects</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Adobe Photoshop</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">ChatGPT</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 flex items-center">
+                                    View Details
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 2 -->
+                        <div class="portfolio-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="relative overflow-hidden">
+                                <img
+                                    src="https://placehold.co/600x400/10b981/ffffff?text=Leadership+Development"
+                                    alt="Leadership Development Course"
+                                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                                >
+                                <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    2023
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Leadership Development Course</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">Created an interactive leadership program featuring scenario-based learning and peer collaboration modules.</p>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Tools & Technologies:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Miro</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Camtasia</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Zoom</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 flex items-center">
+                                    View Details
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 3 -->
+                        <div class="portfolio-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="relative overflow-hidden">
+                                <img
+                                    src="https://placehold.co/600x400/8b5cf6/ffffff?text=Compliance+Training"
+                                    alt="Compliance Training Suite"
+                                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                                >
+                                <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    2022
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Compliance Training Suite</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">Developed a series of engaging compliance modules that increased completion rates from 65% to 92%.</p>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Tools & Technologies:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Canva</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">QuizMaker</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">SCORM</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 flex items-center">
+                                    View Details
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 4 -->
+                        <div class="portfolio-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="relative overflow-hidden">
+                                <img
+                                    src="https://placehold.co/600x400/f59e0b/ffffff?text=Remote+Learning"
+                                    alt="Remote Learning Platform"
+                                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                                >
+                                <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    2022
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Remote Learning Platform</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">Redesigned an outdated LMS interface to improve user engagement and accessibility for remote learners.</p>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Tools & Technologies:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Figma</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">HTML5</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Responsive Design</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 flex items-center">
+                                    View Details
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 5 -->
+                        <div class="portfolio-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="relative overflow-hidden">
+                                <img
+                                    src="https://placehold.co/600x400/ef4444/ffffff?text=Sales+Enablement"
+                                    alt="Sales Enablement Toolkit"
+                                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                                >
+                                <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    2021
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Sales Enablement Toolkit</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">Built a just-in-time learning resource center that improved sales team performance metrics by 35%.</p>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Tools & Technologies:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Google Sites</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Video Editing</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Knowledge Base</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 flex items-center">
+                                    View Details
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 6 -->
+                        <div class="portfolio-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="relative overflow-hidden">
+                                <img
+                                    src="https://placehold.co/600x400/06b6d4/ffffff?text=Diversity+Inclusion"
+                                    alt="Diversity & Inclusion Workshop"
+                                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                                >
+                                <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    2021
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Diversity & Inclusion Workshop</h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">Designed an immersive DEI training experience with storytelling elements and reflective activities.</p>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Tools & Technologies:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Workshop Design</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Facilitation</span>
+                                        <span class="project-tool px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Surveys</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 flex items-center">
+                                    View Details
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Your Email" required>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Expertise</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            A comprehensive skill set developed through years of hands-on instructional design experience.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center p-8 bg-gray-50 rounded-xl fade-in">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Instructional Design</h3>
+                            <p class="text-gray-600">Applying ADDIE, SAM, and other models to create structured, effective learning pathways.</p>
+                        </div>
+                        
+                        <div class="text-center p-8 bg-gray-50 rounded-xl fade-in">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Technology Integration</h3>
+                            <p class="text-gray-600">Expertise in LMS platforms, authoring tools, and emerging technologies for immersive learning.</p>
+                        </div>
+                        
+                        <div class="text-center p-8 bg-gray-50 rounded-xl fade-in">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Evaluation & Analytics</h3>
+                            <p class="text-gray-600">Measuring learning effectiveness through Kirkpatrick levels and data-driven insights.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Subject">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+            </section>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>DesignPro</h3>
-                    <p>Creating innovative learning solutions that empower professionals and organizations to achieve their full potential.</p>
-                    <ul class="social-links">
-                        <li><a href="#">📱</a></li>
-                        <li><a href="#">📧</a></li>
-                        <li><a href="#">💼</a></li>
-                        <li><a href="#">📸</a></li>
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">N T Giridharan</h3>
+                    <p class="text-gray-300 mb-4">
+                        Instructional Designer + eLearning Developer crafting transformative learning experiences since 2008.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">E-Learning Development</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Corporate Training</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">LMS Implementation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Curriculum Design</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Learning Analytics</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Get In Touch</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>n.t.giridharan@iddesign.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>San Francisco, CA</li>
                     </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">E-Learning Development</a></li>
-                        <li><a href="#">Instructional Design</a></li>
-                        <li><a href="#">LMS Implementation</a></li>
-                        <li><a href="#">Training Evaluation</a></li>
-                        <li><a href="#">Content Creation</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li>📧 jane.doe@designpro.com</li>
-                        <li>📱 (555) 123-4567</li>
-                        <li>📍 San Francisco, CA</li>
-                    </ul>
+                    <div class="mt-6">
+                        <form class="space-y-4">
+                            <input
+                                type="email"
+                                placeholder="Your email"
+                                class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            >
+                            <button
+                                type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-lg font-medium transition-colors"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2023 DesignPro. All rights reserved.</p>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 N T Giridharan. All rights reserved. Designed with passion for learning.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        // DOM Elements
+        const homePage = document.getElementById('home-page');
+        const portfolioPage = document.getElementById('portfolio-page');
+        const navbarLinks = document.querySelectorAll('[data-page]');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        const viewWorkBtn = document.getElementById('view-work-btn');
+        const backToHomeBtn = document.getElementById('back-to-home-btn');
+        const viewFullProjectBtn = document.getElementById('view-full-project-btn');
+        const fadeElements = document.querySelectorAll('.fade-in');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        // State
+        let currentPage = 'home';
+        let isMenuOpen = false;
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu after clicking
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
-                
-                // Update active link
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-
-        // Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const nameInput = this.querySelector('input[type="text"]');
-            const emailInput = this.querySelector('input[type="email"]');
-            const messageInput = this.querySelector('textarea');
-            
-            const name = nameInput.value;
-            const email = emailInput.value;
-            const message = messageInput.value;
-            
-            // Simple validation
-            if (name && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.`);
-                this.reset();
-            } else {
-                alert('Please fill out all required fields.');
+        // Navigation functions
+        function showPage(page) {
+            if (page === 'home') {
+                homePage.classList.remove('hidden');
+                portfolioPage.classList.add('hidden');
+                currentPage = 'home';
+            } else if (page === 'portfolio') {
+                homePage.classList.add('hidden');
+                portfolioPage.classList.remove('hidden');
+                currentPage = 'portfolio';
             }
-        });
-
-        // Scroll Animation
-        const faders = document.querySelectorAll('.fade-in');
-        const skillItems = document.querySelectorAll('.skill-item');
-        const statItems = document.querySelectorAll('.stat-item');
-
-        const appearOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -100px 0px"
-        };
-
-        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
+            
+            // Update active nav links
+            navbarLinks.forEach(link => {
+                if (link.dataset.page === page) {
+                    link.classList.add('active');
                 } else {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
+                    link.classList.remove('active');
                 }
             });
-        }, appearOptions);
+            
+            // Scroll to top when changing pages
+            window.scrollTo(0, 0);
+        }
 
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('open', isMenuOpen);
+            
+            if (isMenuOpen) {
+                menuOpenIcon.classList.add('hidden');
+                menuCloseIcon.classList.remove('hidden');
+            } else {
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            }
+        }
+
+        // Close mobile menu when clicking a link
+        function closeMobileMenu() {
+            if (isMenuOpen) {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('open');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            }
+        }
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
         });
 
-        // Portfolio Filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        // Observe fade-in elements
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 100);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
-                    }
-                });
+        // Event Listeners
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage(link.dataset.page);
+                closeMobileMenu();
             });
         });
 
-        // Header scroll effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.backgroundColor = 'white';
-                header.style.backdropFilter = 'none';
-            }
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        viewWorkBtn.addEventListener('click', () => {
+            showPage('portfolio');
         });
 
-        // Initialize animations on load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Trigger initial check for elements already in view
-            setTimeout(() => {
-                faders.forEach(fader => {
-                    if (fader.getBoundingClientRect().top < window.innerHeight) {
-                        fader.classList.add('active');
-                    }
-                });
-            }, 100);
+        backToHomeBtn.addEventListener('click', () => {
+            showPage('home');
+        });
+
+        viewFullProjectBtn.addEventListener('click', () => {
+            showPage('portfolio');
+        });
+
+        // Initialize
+        showPage('home');
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                closeMobileMenu();
+            }
         });
     </script>
 </body>
